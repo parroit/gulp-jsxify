@@ -56,13 +56,6 @@ module.exports = function(args){
 
 ### jsxify(options)
 
-#### options.requiresResolve
-
-Type: `string`  
-Default: The grant-parent folder of this readme file (supposed to becontain gulpfile.js)
-
-
-
 
 #### options.requires
 
