@@ -1,0 +1,47 @@
+{
+  "name": "gulp-jsxify",
+  "version": "0.1.0",
+  "description": "gulp plugin to convert html files to react jsx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+ "repository": {
+    "type": "git",
+    "url": "git://github.com/parroit/gulp-jsxify"
+  },
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/parroit/gulp-jsxify/issues"
+  },
+  "homepage": "https://github.com/parroit/gulp-jsxify",
+  
+  "author": {
+    "name": "Andrea Parodi",
+    "email": "me@parro.it",
+    "url": "http://parro.it"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+
+  "keywords": [
+    "gulpplugin",
+    "react",
+    "jsx",
+    "html",
+    "transform",
+    "transformer",
+    "template",
+    "templates",
+    "view",
+    "views",
+    "precompile",
+    "compile"
+  ],
+  "dependencies": {
+    "through2": "^0.5.1",
+    "gulp-util": "^2.2.17"
+  }
+}
