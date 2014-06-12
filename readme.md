@@ -18,12 +18,6 @@ $ npm install --save-dev gulp-jsxify
 var gulp = require('gulp');
 var jsxify = require('gulp-jsxify');
 
-gulp.task('default', function () {
-	return gulp.src('template.jsx')
-		.pipe(react())
-		.pipe(gulp.dest('dist'));
-});
-
 gulp.task('default', function() {
     
     return gulp.src('template.html')
@@ -37,21 +31,48 @@ gulp.task('default', function() {
 
 ```
 
-The JSX directive `/** @jsx React.DOM */` is automagically prepended to `.jsx` files if missing.
+## Templates content is wrapped with the following code:
+
+```js
+/** @jsx React.DOM */
+'use strict';
+
+//here we add requires as defined below
+            
+module.exports = function(args){ 
+            return (
+                    //here we add template content
+            
+            );
+};
+
+```
+
+
+
 
 
 ## API
 
 ### jsxify(options)
 
+#### options.requiresResolve
+
+Type: `string`  
+Default: The grant-parent folder of this readme file (supposed to becontain gulpfile.js)
+
+
+
+
 #### options.requires
 
 Type: `object`  
 Default: `{React: 'react'}`
 
-Define a set of React widget required by yuor templates.
+Define a set of React widget required by your templates.
 React dependency is inserted by defaqult if not present.
 
+_Relative requirements must be relative to the folder where gulp.dest() final js files_ 
 
 ## License
 

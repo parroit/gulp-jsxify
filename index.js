@@ -1,4 +1,5 @@
 'use strict';
+
 var gutil = require('gulp-util');
 var through = require('through2');
 
@@ -6,8 +7,8 @@ var through = require('through2');
 module.exports = function(options) {
     options = options || {};
     options.requires = options.requires || [];
-    options.requires.React = 'react';
-
+    options.requires.React = options.requires.React || 'react';
+    
     return through.obj(function(file, enc, cb) {
         if (file.isNull()) {
             this.push(file);
@@ -24,6 +25,7 @@ module.exports = function(options) {
             
             .map(function(reqName) {
                 var reqPath = options.requires[reqName];
+
                 return 'var ' + reqName + ' = require(\'' + reqPath +'\');' ;
             })
 
@@ -37,7 +39,7 @@ module.exports = function(options) {
             '    return (\n' +
             str +
             '    );\n' +
-            '}';
+            '};';
 
         file.contents = new Buffer(jsxContent);
         file.path = gutil.replaceExtension(file.path, '.jsx');
