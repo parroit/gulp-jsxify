@@ -43,8 +43,10 @@ module.exports = function(options) {
 
         var str = file.contents.toString();
         var usedTags = pseudoGuessTags(str);
-        console.log(usedTags);
-        var requires = Object.keys(options.requires)
+        
+        var requiresTagNames = Object.keys(options.requires);
+        
+        var requires = requiresTagNames
             
             .filter (function(tag){
                 return usedTags.indexOf(tag) > -1;
@@ -60,6 +62,11 @@ module.exports = function(options) {
 
             .join('\n');
 
+        usedTags.forEach(function(tag){
+            if (requiresTagNames.indexOf( tag ) === -1 ) {
+                gutil.log('WARNING: unknown tag ' + tag);
+            }
+        });    
 
         var jsxContent = '/** @jsx React.DOM */\n' +
             '\'use strict\';\n' +
