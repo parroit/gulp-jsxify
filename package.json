@@ -1,6 +1,6 @@
 {
   "name": "gulp-jsxify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "gulp plugin to convert html files to react jsx",
   "main": "index.js",
   "scripts": {
