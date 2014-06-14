@@ -4,6 +4,8 @@
 
 *Issues with the output should be reported on the React [issue tracker](https://github.com/facebook/react/issues).*
 
+*You'll find an introductory blog post [here](http://www.parro.it/2014/06/14/gulp-jsxify-transpile-your-html-templates-to-react-jsx-files/)*
+
 
 ## Install
 
