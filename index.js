@@ -55,6 +55,10 @@ module.exports = function(options) {
             .map(function(reqName) {
                 var reqPath = options.requires[reqName];
 
+                if(reqPath.indexOf('require')!==-1){
+                    return 'var ' + reqName + ' = '+ reqPath+';';
+                }
+                
                 return 'var ' + reqName + ' = require(\'' + reqPath + '\');';
             })
 
